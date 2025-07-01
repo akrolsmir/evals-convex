@@ -5,9 +5,8 @@ import {
   useAction,
 } from "convex/react";
 import { api } from "../convex/_generated/api";
-import { SignInForm } from "./SignInForm";
-import { SignOutButton } from "./SignOutButton";
 import { SignInButton } from "./SignInButton";
+import { SignOutButton } from "./SignOutButton";
 import { Toaster } from "sonner";
 import { ProjectList } from "./components/ProjectList";
 import { ProjectDetail } from "./components/ProjectDetail";
@@ -23,7 +22,7 @@ export default function App() {
   // Sync projects on app load
   useEffect(() => {
     if (projects?.length === 0) {
-      syncProjects();
+      void syncProjects();
     }
   }, [projects, syncProjects]);
 
